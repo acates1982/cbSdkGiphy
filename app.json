@@ -1,0 +1,12 @@
+{
+  "name": "Giphy Selector 9000",
+  "description": "Example Marketing Cloud Content Builder SDK block for Giphy",
+  "repository": "https://github.com/acates1982/cbSdkGiphy",
+  "logo": "https://experts-cb-sdk-giphy.herokuapp.com/images/giphy-selector.png",
+  "keywords": ["content builder", "sdk", "giphy", "marketing cloud"],
+  "env": {
+    "apikey": {
+      "description": "Create a new Giphy app - https://developers.giphy.com/dashboard/?create=true"
+    }
+  }
+}
