@@ -3,6 +3,11 @@ var router = express.Router();
 var GphApiClient = require('giphy-js-sdk-core');
 
 var apiKey = process.env.apikey;
+var rating = process.env.rating || "g";
+var limit = process.env.limit || "50";
+var language = process.env.language || "en";
+var sort = process.env.sort || "relevant"
+
 let client = GphApiClient(apiKey);
 
 var searchTerm = '';
@@ -12,8 +17,11 @@ router.post('/', function(req, res) {
   searchTerm = req.body.searchTerm;
   console.log(searchTerm);
   client.search("gifs", {
-      "q": searchTerm,
-      "limit": "25"
+      "q" : searchTerm,
+      "rating" : rating,
+      "limit" : limit,
+      "lang" : language,
+      "sort" : sort
     })
     .then((response) => {
       var searchResponse = response.data.filter(function(d) {

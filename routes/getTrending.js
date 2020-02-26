@@ -3,13 +3,17 @@ var router = express.Router();
 var GphApiClient = require('giphy-js-sdk-core');
 
 var apiKey = process.env.apikey;
+var rating = process.env.rating || "g";
+var limit = process.env.limit || "50";
+
 let client = GphApiClient(apiKey);
 
 trendingResponse = [];
 
 router.get('/', function(req, res) {
   client.trending("gifs", {
-      "limit": "100"
+      "limit": limit,
+      "rating" : rating
     })
     .then((response) => {
       var trendingResponse = response.data.filter(function(d) {

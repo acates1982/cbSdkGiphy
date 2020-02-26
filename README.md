@@ -14,7 +14,7 @@
 * This SDK app provides a way search giphy for an image, take additional input from the block, and render the image in the email.
 
 ## Code Overview
-* The application was written in Node.js. Express is used as the framework with EJS as the view engine. Leveraged Salesforce Lightning Design System for the User Interface, Giphy Core SDK for JS for interacting with Giphy API, and Salesforce Marketing Cloud Content Builder Block SDK for interacting with Content Builder.
+* The application was written in Node.js. Express is used as the framework with [EJS](https://github.com/mde/ejs) as the view engine. Leveraged [Salesforce Lightning Design System](https://github.com/salesforce-ux/design-system) for the User Interface, [Giphy Core SDK for JS](https://github.com/Giphy/giphy-js-sdk-core) for interacting with Giphy API, and [Salesforce Marketing Cloud Block SDK](https://github.com/salesforce-marketingcloud/blocksdk) for interacting with Content Builder.
 * 3 Total Routes - 1 View
   * index - home page for app that provides the interface the user will engage with.
   * getTrending - retrieves the most recent trending gifs as the block initializes.
