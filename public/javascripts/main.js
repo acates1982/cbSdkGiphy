@@ -40,7 +40,11 @@ function getSearch() {
 // SDK logic to set and retrieve attributes of block
 
 var sdk = new window.sfdc.BlockSDK({
-  ['stylingblock','htmlblock']
+  [{
+    name: 'My Custom Tab',
+    key: 'customtab',
+    url: 'https://experts-cb-sdk-giphy.herokuapp.com/'
+}, 'stylingblock', 'htmlblock']
 });
 
 var link, width, height, scale, alignment, imageurl;
