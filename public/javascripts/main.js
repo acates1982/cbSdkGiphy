@@ -18,16 +18,13 @@ function getTrending() {
 }
 
 function getSearch() {
-  console.log("clicked search...");
   searchTerm = document.getElementById('search-text').value;
-  console.log(searchTerm);
   $("#gif-images").empty();
   var postData = {
     'searchTerm': searchTerm
   };
   $.post('/getSearch/', postData, function(data) {})
     .done(function(data) {
-      console.log(JSON.parse(data));
       $.each(JSON.parse(data), function(key, value) {
         $("#gif-images").append('<img class="slds-p-around_xxx-small grow" sdkimg = "' + value.webp_url + '" src="' + value.preview_url + '" style="width:90px;height:90px;">');
       })
@@ -42,7 +39,9 @@ function getSearch() {
 
 // SDK logic to set and retrieve attributes of block
 
-var sdk = new window.sfdc.BlockSDK();
+var sdk = new window.sfdc.BlockSDK({
+  ['stylingblock','htmlblock']
+});
 
 var link, width, height, scale, alignment, imageurl;
 
